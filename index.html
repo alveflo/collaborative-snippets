@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>snippets</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
+  <div id="editor"></div>
+  <script src="https://togetherjs.com/togetherjs-min.js"></script>
+  <script src="ace/ace.js"></script> 
+  <script type="text/javascript">
+    ace.require('./ace/ext-language_tools.js');
+    var editor = ace.edit('editor');
+    editor.setOptions({
+      fontSize: '12pt'
+    });
+    editor.setTheme('ace/theme/monokai');
+    editor.getSession().setMode('ace/mode/html');
+    var html = "<!doctype html>\n";
+    html += "<html>\n";
+    html += "    <head>\n";
+    html += "        <title>\n";
+    html += "            My first application\n";
+    html += "        </title>\n";
+    html += "    </head>\n";
+    html += "    <body>\n";
+    html += "        <h1>Applify!</h1>\n";
+    html += "        <p>This is my first awesome makiato application</p>\n";
+    html += "    </body>\n";
+    html += "</html>\n";
+    editor.getSession().setValue(html);
+  </script>
+</body>
+</html>
